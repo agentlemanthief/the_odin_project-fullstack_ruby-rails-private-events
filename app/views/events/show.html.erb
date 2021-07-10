@@ -1,10 +1,29 @@
-<h1><%= @event.title %></h1>
-
-<div>
-  <p>Start: <%= @event.start.to_s(:short) %></p>
-  <p>End: <%= @event.end.to_s(:short) %></p>
-  <p>Location: <%= @event.location %></p>
-  <p>Description: <%= @event.description %></p>
-</div>
-
-<%= link_to 'Home', root_path %>
+<div class="box">
+    <article class="media">
+      <div class="content">
+        <p class="title is-4"><%= @event.title %></p>
+      </div>
+    </article>
+    <article class="media">
+      <div class="content is-left mr-6">
+        <p>Starts: </p>
+        <p><%= @event.start.strftime('%d/%m/%Y @ %H:%M') %></p>
+      </div>
+      <div class="content is-right ml-6">
+        <p>Ends: </p>
+        <p><%= @event.end.strftime('%d/%m/%Y @ %H:%M') %></p>
+      </div>
+    </article>
+    <article class="media">
+      <div class="content">
+        <p class="title is-6">Description: </p>
+        <p><%= @event.description %></p>
+      </div>
+    </article>
+    <article class="media">
+      <div class="content">
+        <p class="title is-6">Location: </p>
+        <p><%= @event.location %></p>
+      </div>
+    </article>
+  </div>
