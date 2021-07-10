@@ -1,0 +1,7 @@
+<h1>My Events</h1>
+
+<% @user.events.each do |event| %>
+  <%= link_to event do %>
+    <p><%= event.title %></p>
+  <% end %>
+<% end %>

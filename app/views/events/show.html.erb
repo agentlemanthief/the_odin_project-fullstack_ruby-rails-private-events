@@ -1,0 +1,10 @@
+<h1><%= @event.title %></h1>
+
+<div>
+  <p>Start: <%= @event.start.to_s(:short) %></p>
+  <p>End: <%= @event.end.to_s(:short) %></p>
+  <p>Location: <%= @event.location %></p>
+  <p>Description: <%= @event.description %></p>
+</div>
+
+<%= link_to 'Home', root_path %>

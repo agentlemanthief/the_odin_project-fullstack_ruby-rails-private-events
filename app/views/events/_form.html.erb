@@ -1,0 +1,25 @@
+<%= form_with model: event do |f| %>
+  <div>
+    <%= f.label :start, 'Starts: ' %>
+    <%= f.datetime_local_field :start %>
+  </div>
+
+  <div>
+    <%= f.label :end, 'Ends: ' %>
+    <%= f.datetime_local_field :end %>
+  </div>
+
+  <div>
+    <%= f.label :location, 'Location: ' %>
+    <%= f.text_area :location, size: '25x5' %>
+  </div>
+
+  <div>
+    <%= f.label :description, 'Description: ' %>
+    <%= f.text_area :description, size: '50x5' %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit"%>
+  </div>
+<% end %>
