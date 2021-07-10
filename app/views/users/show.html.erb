@@ -1,7 +1,14 @@
-<h1>My Events</h1>
+<h1 class="title is-6">My Events</h1>
+
 
 <% @user.events.each do |event| %>
-  <%= link_to event do %>
-    <p><%= event.title %></p>
-  <% end %>
+  <div class="box">
+    <article class="media">
+      <div class="content">
+        <%= link_to event, class: 'has-text-grey' do %>
+          <p><%= event.title %></p>
+        <% end %>
+      </div>
+    </article>
+  </div>
 <% end %>

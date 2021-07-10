@@ -41,6 +41,11 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <% if user_signed_in? %>
+                <% if params[:controller] == 'users' && params[:action] == 'show' %>
+                  <p class="control">
+                    <%= link_to 'New Event', new_event_path, class: 'button is-dark' %>
+                  </p>
+                <% end %>
                 <p class="control">
                   <%= link_to 'Your Events', user_path(id: current_user.id), class: 'button is-dark' %>
                 </p>
