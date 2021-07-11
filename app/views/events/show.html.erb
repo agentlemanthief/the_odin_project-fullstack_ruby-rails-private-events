@@ -1,45 +1,58 @@
-<div class="box">
-    <article class="media">
-      <div class="content">
-        <p class="title is-4"><%= @event.title %></p>
-        <p>Host: <%= @event.creator.name %></p>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="box">
+            <article class="media">
+              <div class="content">
+                <p class="title is-4"><%= @event.title %></p>
+                <p>Host: <%= @event.creator.name %></p>
+              </div>
+              <div class="content" style="margin-left: auto">
+                <% if @event.attendees.include?(current_user) %>
+                  <p><%= link_to 'Cancel Attendance', cancel_attend_event_path(@event), method: :delete, class: 'button is-danger' %></p>
+                <% else %>
+                  <p><%= link_to 'Attend', attend_event_path(@event), method: :put, class: 'button is-primary' %></p>
+                <% end %>
+              </div>
+            </article>
+            <article class="media">
+              <div class="content">
+                <p>Starts: </p>
+                <p><%= @event.start.strftime('%d/%m/%Y @ %H:%M') %></p>
+              </div>
+              <div class="content is-right" style="margin-left: auto; margin-right: 20%">
+                <p>Ends: </p>
+                <p><%= @event.end.strftime('%d/%m/%Y @ %H:%M') %></p>
+              </div>
+            </article>
+            <article class="media">
+              <div class="content">
+                <p class="title is-6">Description: </p>
+                <p><%= @event.description %></p>
+              </div>
+            </article>
+            <article class="media">
+              <div class="content">
+                <p class="title is-6">Location: </p>
+                <p><%= @event.location %></p>
+              </div>
+            </article>
+            <article class="media">
+              <div class="content">
+                <% if @event.attendees.any? %>
+                  <p class="title is-6">Attendees: </p>
+                  <% @event.attendees.each do |attendee| %>
+                    <p><%= attendee.name %></p>
+                  <% end %>
+                <% else %>
+                  <p class="title is-6">No Attendees Yet!</p>
+                <% end %>
+              </div>
+            </article>
+          </div>
       </div>
-      <div class="content" style="margin-left: auto">
-        <% if @event.attendees.include?(current_user) %>
-          <p><%= link_to 'Cancel Attendance', cancel_attend_event_path(@event), method: :delete, class: 'button is-danger' %></p>
-        <% else %>
-          <p><%= link_to 'Attend', attend_event_path(@event), method: :put, class: 'button is-primary' %></p>
-        <% end %>
-      </div>
-    </article>
-    <article class="media">
-      <div class="content is-left mr-6">
-        <p>Starts: </p>
-        <p><%= @event.start.strftime('%d/%m/%Y @ %H:%M') %></p>
-      </div>
-      <div class="content is-right ml-6">
-        <p>Ends: </p>
-        <p><%= @event.end.strftime('%d/%m/%Y @ %H:%M') %></p>
-      </div>
-    </article>
-    <article class="media">
-      <div class="content">
-        <p class="title is-6">Description: </p>
-        <p><%= @event.description %></p>
-      </div>
-    </article>
-    <article class="media">
-      <div class="content">
-        <p class="title is-6">Location: </p>
-        <p><%= @event.location %></p>
-      </div>
-    </article>
-    <article class="media">
-      <div class="content">
-        <p class="title is-6">Attendees: </p>
-        <% @event.attendees.each do |attendee| %>
-          <p><%= attendee.name %></p>
-        <% end %>
-      </div>
-    </article>
+    </div>
   </div>
+</section>
+
