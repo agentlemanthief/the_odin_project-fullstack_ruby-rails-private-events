@@ -3,13 +3,10 @@
 <% @events.each do |event| %>
   <div class="box">
     <article class="media">
-        <div class="content is-left" style="margin: 0, auto, 0, 0">
+        <div class="content">
         <%= link_to event, class: 'has-text-grey' do %>
           <p><%= event.title %></p>
         <% end %>
-      </div>
-      <div class="content is-left" style="margin-left: auto">
-        <p><%= link_to 'Attend', root_path(@event), method: :put, class: 'button is-primary' %></p>
       </div>
     </article>
   </div>

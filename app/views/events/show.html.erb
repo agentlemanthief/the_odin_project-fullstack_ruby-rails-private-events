@@ -2,6 +2,14 @@
     <article class="media">
       <div class="content">
         <p class="title is-4"><%= @event.title %></p>
+        <p>Host: <%= @event.creator.name %></p>
+      </div>
+      <div class="content" style="margin-left: auto">
+        <% if @event.attendees.include?(current_user) %>
+          <p><%= link_to 'Cancel Attendance', cancel_attend_event_path(@event), method: :delete, class: 'button is-danger' %></p>
+        <% else %>
+          <p><%= link_to 'Attend', attend_event_path(@event), method: :put, class: 'button is-primary' %></p>
+        <% end %>
       </div>
     </article>
     <article class="media">
@@ -24,6 +32,14 @@
       <div class="content">
         <p class="title is-6">Location: </p>
         <p><%= @event.location %></p>
+      </div>
+    </article>
+    <article class="media">
+      <div class="content">
+        <p class="title is-6">Attendees: </p>
+        <% @event.attendees.each do |attendee| %>
+          <p><%= attendee.name %></p>
+        <% end %>
       </div>
     </article>
   </div>
