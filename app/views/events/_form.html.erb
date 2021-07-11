@@ -4,7 +4,8 @@
       <div class="column is-5">
         <div class="box">
           <h2 class="title is-2">New Event</h2>
-          <%= form_with model: event do |f| %>
+          <%= form_with model: @event do |f| %>
+
             <div class="field">
               <div class="control">
                 <%= f.label :title, 'Title: ', class: 'label' %>
@@ -45,6 +46,7 @@
                 <%= f.submit "Submit", class: 'button' %>
               </div>
             </div>
+
           </div>
         <% end %>
       </div>
