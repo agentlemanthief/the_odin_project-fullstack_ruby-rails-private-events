@@ -1,0 +1,16 @@
+<div class="column is-half">
+  <nav class="panel">
+    <p class="panel-heading">My Events</p>
+    <div class="box">
+      <% @user.created_events.each do |event| %>
+        <article class="media">
+          <div class="media-content">
+            <%= link_to event, class: 'has-text-grey' do %>
+              <p><%= event.title %></p>
+            <% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,14 @@
+<div class="column is-half">
+<h1 class="title is-4">All Events</h1>
+  <% @events.each do |event| %>
+    <div class="box">
+      <article class="media">
+          <div class="content">
+          <%= link_to event, class: 'has-text-grey' do %>
+            <p><%= event.title %></p>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>

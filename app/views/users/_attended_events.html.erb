@@ -1,0 +1,16 @@
+<div class="column is-3">
+  <nav class="panel">
+    <p class="panel-heading">Attended Events</h1>
+    <div class="box">
+      <% @user.attended_events.each do |a_event| %>
+        <article class="media">
+          <div class="media-content">
+            <%= link_to a_event, class: 'has-text-grey' do %>
+              <p><%= a_event.title %></p>
+            <% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </nav>
+</div>
