@@ -6,6 +6,7 @@ class InvitationsController < ApplicationController
       redirect_to @event, notice: 'You are already attending'
     else
       @event.attendees << current_user
+      redirect_to @event, notice: 'You are now attending this event!'
     end
   end
 
