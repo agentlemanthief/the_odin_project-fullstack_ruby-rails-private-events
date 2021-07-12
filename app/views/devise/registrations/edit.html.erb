@@ -48,9 +48,22 @@
               <%= f.password_field :current_password, autocomplete: "current-password", class: 'input' %>
             </div>
 
-            <div class="actions">
-              <%= f.submit "Update", class: 'button' %>
-            </div>
+
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <div class="button">
+                      <%= link_to "Back", :back %>
+                    </div>
+                  </div>
+                  <div class="column has-text-centered">
+                    <div class="actions">
+                      <%= f.submit "Update", class: 'button' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
           <% end %>
 
           <hr>
@@ -58,10 +71,6 @@
           <div class="has-text-centered">
             <h3 class="title is-5">Unhappy?</h3>
             <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'button' %>
-          </div>
-
-          <div class="button">
-            <%= link_to "Back", :back %>
           </div>
 
         </div>
