@@ -1,0 +1,14 @@
+<div class="column is-3">
+  <div class="box">
+    <h1 class="title is-4">Upcoming Events</h1>
+      <% @user.attended_events.where("start > ?", DateTime.now).each do |a_event| %>
+        <article class="media">
+          <div class="media-content">
+            <%= link_to a_event, class: 'has-text-grey' do %>
+              <p><%= a_event.title %></p>
+            <% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+</div>
