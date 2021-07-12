@@ -1,4 +1,6 @@
 class InvitationsController < ApplicationController
+  before_action :authenticate_user!
+
   def attend
     @event = Event.find(params[:id])
 
