@@ -3,11 +3,14 @@ class Event < ApplicationRecord
   has_many :invitations, foreign_key: :event_id
   has_many :attendees, through: :invitations
 
-  def self.upcoming
-    where("start > ?", DateTime.now)
-  end
+  scope :upcoming, -> { where("start > ?", DateTime.now) }
+  scope :past, -> { where("start < ?", DateTime.now) }
 
-  def self.past
-    where("start < ?", DateTime.now)
-  end
+  # def self.upcoming
+  #   where("start > ?", DateTime.now)
+  # end
+
+  # def self.past
+  #   where("start < ?", DateTime.now)
+  # end
 end
