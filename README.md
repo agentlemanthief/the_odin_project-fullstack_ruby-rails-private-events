@@ -68,6 +68,6 @@ Extra Credit: Allow users to edit and delete the events they created.
 
 5. Extra Credit: Allow users to invite other users to events and only allow invited users to attend an event.
 
-#### Link
+### Link
 
 https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/associations
