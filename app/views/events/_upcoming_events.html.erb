@@ -1,7 +1,7 @@
 <div class="column is-half">
   <div class="box">
-    <h1 class="title is-4">All Events</h1>
-      <% @events.each do |event| %>
+    <h1 class="title is-4">Upcoming Events</h1>
+      <% @events.upcoming.each do |event| %>
           <article class="media">
             <div class="content">
               <%= link_to event, class: 'has-text-grey' do %>
