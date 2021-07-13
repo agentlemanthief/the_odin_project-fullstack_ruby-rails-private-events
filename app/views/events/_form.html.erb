@@ -3,13 +3,13 @@
     <div class="columns is-centered">
       <div class="column is-5">
         <div class="box">
-          <h2 class="title is-4">New Event</h2>
+          <h2 class="title is-4"><%= heading %></h2>
           <%= form_with model: @event do |f| %>
 
             <div class="field">
               <div class="control">
                 <%= f.label :title, 'Title: ', class: 'label' %>
-                <%= f.text_field :title, class: 'input' %>
+                <%= f.text_field :title, class: 'input', autofocus: true %>
               </div>
             </div>
 

@@ -14,6 +14,10 @@
                 <% else %>
                   <p><%= link_to 'Attend', attend_event_path(@event), method: :put, class: 'button is-primary' %></p>
                 <% end %>
+                <% if current_user == @event.creator %>
+                  <%= link_to "Edit", edit_event_path, class: 'button' %>
+                  <%= link_to 'Delete', event_path(@event), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </article>
             <article class="media">

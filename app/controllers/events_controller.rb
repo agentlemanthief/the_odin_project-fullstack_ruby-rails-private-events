@@ -13,7 +13,6 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-
   def create
     @event = current_user.created_events.build(event_params)
 
@@ -21,9 +20,30 @@ class EventsController < ApplicationController
       flash[:notice] = 'Event successfully saved!'
       redirect_to @event
     else
-      flash[:notice] = 'Event could not be saved!'
+      flash[:alert] = 'Event could not be saved!'
       render :new
     end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      redirect_to @event, notice: 'Event updated!'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to root_path, alert: 'Event deleted!'
   end
 
   private

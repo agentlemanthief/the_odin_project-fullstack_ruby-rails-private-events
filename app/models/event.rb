@@ -6,6 +6,8 @@ class Event < ApplicationRecord
   scope :upcoming, -> { where("start > ?", DateTime.now) }
   scope :past, -> { where("start < ?", DateTime.now) }
 
+  validates :title, :start, :end, :location, :description, presence: true
+
   # def self.upcoming
   #   where("start > ?", DateTime.now)
   # end
