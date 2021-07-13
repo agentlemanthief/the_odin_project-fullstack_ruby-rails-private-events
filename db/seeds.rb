@@ -8,6 +8,7 @@
 
 puts 'Seeding...'
 
+User.create(name: 'Nicholas', username: 'agentlemanthief', email: 'nicholas.baldwin@icloud.com', password: 'Password1')
 User.create(name: 'Frank', username: 'frank', email: 'frank@email.com', password: 'Password1')
 User.create(name: 'Deborah', username: 'deborah', email: 'deborah@email.com', password: 'Password1')
 User.create(name: 'Charlie', username: 'charlie', email: 'charlie@email.com', password: 'Password1')
@@ -22,6 +23,15 @@ Event.create(title: 'Rave in a Cave', start: '2021-08-01 16:00', end: '2021-08-0
 Event.create(title: 'Few Bevvies with Batista', start: '2021-09-16 19:00', end: '2021-09-16 23:59', location: "Batista's Bar", description: "Couple of mojitos with Batista at his bar in Miami", creator_id: 12)
 Event.create(title: 'Meet the Gang', start: '2021-07-29 12:00', end: '2021-07-29 23:59', location: "Paddy's Pub", description: "Go daytime drinking with the gang from It's allways sunny in Philidelphia", creator_id: 8)
 Event.create(title: 'Beach Party', start: '2021-08-02 17:00', end: '2021-08-02 23:00', location: 'Hove Lawns', description: 'Beach party featuring Fatboy Slim!', creator_id: 1)
+Event.create(title: 'Party', start: '2021-09-02 17:00', end: '2021-09-02 23:00', location: 'My House', description: 'Party at my house, bring a plus one!', creator_id: 1)
+
+Event.create(title: "Leyla's Rock Climbing Class", start: '2022-01-02 12:00', end: '2022-01-02 19:00', location: 'The local climbing wall', description: 'Rock climbing class with a twist! It is led by cats!', creator_id: 1)
+Event.create(title: "Ethel's Baby Shower", start: '2021-12-02 14:00', end: '2021-12-02 19:00', location: 'Town hall', description: 'Time to shower the mother of Ethel in gifts', creator_id: 1)
+Event.create(title: "Gaston's Graduation Party", start: '2022-09-03 17:00', end: '2022-09-03 23:00', location: 'Graduation hall', description: "Graduation party for Gaston, it's a secret so don't let him know!", creator_id: 1)
+Event.create(title: "Shelby's Stag Night", start: '2022-06-06 17:00', end: '2022-06-06 23:59', location: 'On the town', description: "Shelby's stag do, let's send him on the way in style - boots and suits!", creator_id: 1)
+Event.create(title: "Orla's Roller Derby Classes", start: '2021-07-02 17:00', end: '2021-07-02 22:00', location: 'Local Derby Hall', description: 'In depth look at roller derby history and techniques', creator_id: 1)
+Event.create(title: "Breakfast at Tiffany's", start: '2021-10-02 09:00', end: '2021-10-02 12:00', location: "Tiffany's Diner", description: 'Breakfast with all the trimmings - all you can eat!', creator_id: 1)
+Event.create(title: "Travis' Bar Mitzvah", start: '2021-11-02 17:00', end: '2021-08-02 23:00', location: 'The Synagogue', description: 'Travis gets a Bar Mitzvah!', creator_id: 1)
 
 Invitation.create(event_id: 1, attendee_id: 2)
 Invitation.create(event_id: 1, attendee_id: 3)
